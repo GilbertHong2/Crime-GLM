@@ -1,4 +1,4 @@
-
+# import libraries and the dataset
 library(ggplot2)
 library(tidyverse)
 library(caret)
@@ -125,6 +125,7 @@ valid_y <- data_valid[15]
 pois_glm_pred <- predict(pois_all2, newdata = valid_x, type = "response")
 pois_gam_pred <- predict(gam_poisson, newdata = valid_x, type = "response")
 
+# performance
 glm_rmse <- rmse(valid_y$Crime, pois_glm_pred)
 gam_rmse <- rmse(valid_y$Crime, pois_gam_pred)
 glm_rmse
